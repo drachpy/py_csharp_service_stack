@@ -230,7 +230,7 @@ with open(filename, "a") as writer:
     #endregion Get<<ResourceName>>List
         """.replace("<<ResourceName>>", resource))
 
-    if (verb in ("all", "delete")):
+    if (verb in ("all", "post")):
         writer.write("""
     #region Post<<ResourceName>>
     public class Post<<ResourceName>>Response { }
@@ -241,7 +241,7 @@ with open(filename, "a") as writer:
     #endregion Post<<ResourceName>>
         """.replace("<<ResourceName>>", resource))
 
-    if (verb in ("all", "delete")):
+    if (verb in ("all", "get")):
         writer.write("""
     #region Get<<ResourceName>>
     public class Get<<ResourceName>>Response { }
@@ -252,7 +252,7 @@ with open(filename, "a") as writer:
     #endregion Get<<ResourceName>>
         """.replace("<<ResourceName>>", resource))
 
-    if (verb in ("all", "delete")):
+    if (verb in ("all", "put")):
         writer.write("""
     #region Put<<ResourceName>>
     public class Put<<ResourceName>>Response { }
@@ -286,17 +286,17 @@ with open(filename, "a") as writer:
         Get<<ResourceName>>ListResponse Get<<ResourceName>>(Get<<ResourceName>>ListRequest request);
         """.replace("<<ResourceName>>", resource))
 
-    if (verb in ("all", "delete")):
+    if (verb in ("all", "post")):
         writer.write("""
         Post<<ResourceName>>Response Post<<ResourceName>>(Post<<ResourceName>>Request request);
         """.replace("<<ResourceName>>", resource))
 
-    if (verb in ("all", "delete")):
+    if (verb in ("all", "get")):
         writer.write("""
         Get<<ResourceName>>Response Get<<ResourceName>>(Get<<ResourceName>>Request request);
         """.replace("<<ResourceName>>", resource))
 
-    if (verb in ("all", "delete")):
+    if (verb in ("all", "put")):
         writer.write("""
         Put<<ResourceName>>Response Put<<ResourceName>>(Put<<ResourceName>>Request request);
         """.replace("<<ResourceName>>", resource))
