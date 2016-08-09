@@ -27,8 +27,8 @@ if not module:
 if not resource:
     resource = "<<ResourceName>>"
 
-# Route
-filename = "Implementation/Drachpy.<<ModuleName>>.API/Request/Route.cs".replace("<<ModuleName>>", module)
+# Request
+filename = "Implementation/Drachpy.<<ModuleName>>.API/Request/Request.cs".replace("<<ModuleName>>", module)
 dir = os.path.dirname(filename)
 if not os.path.exists(dir):
     os.makedirs(dir)
@@ -87,8 +87,8 @@ with open(filename, "a") as writer:
         }
     }
         """.replace("<<ResourceName>>", resource))
-# Request
-filename = "Implementation/Drachpy.<<ModuleName>>.API/Request/Request.cs".replace("<<ModuleName>>", module)
+# Route
+filename = "Implementation/Drachpy.<<ModuleName>>.API/Request/Route.cs".replace("<<ModuleName>>", module)
 dir = os.path.dirname(filename)
 if not os.path.exists(dir):
     os.makedirs(dir)
